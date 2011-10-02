@@ -5,7 +5,7 @@
 
 pkgbase=linux
 pkgname=('linux' 'linux-headers' 'linux-docs') # Build stock -ARCH kernel
-#pkgname=linux-scode      # Build kernel with a different name
+pkgname=('linux-arch4ec2' 'linux-arch4ec2-headers' 'linux-arch4ec2-docs')      # Build kernel with a different name
 _kernelname=${pkgname#linux}
 _basekernel=3.0
 pkgver=${_basekernel}.4
@@ -15,6 +15,7 @@ url="http://www.kernel.org/"
 license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl')
 options=('!strip')
+# kernel.org down since compromise
 #source=("ftp://ftp.kernel.org/pub/linux/kernel/v3.0/linux-${_basekernel}.tar.bz2"
 #        "ftp://ftp.kernel.org/pub/linux/kernel/v3.0/patch-${pkgver}.gz"
 source=("http://ftp.informatik.rwth-aachen.de/ftp/pub/Linux/kernel/v3.0/linux-${_basekernel}.tar.bz2"
@@ -91,7 +92,7 @@ build() {
   make ${MAKEFLAGS} bzImage modules
 }
 
-package_linux() {
+package_linux-arch4ec2() {
   pkgdesc="The Linux Kernel and modules"
   groups=('base')
   depends=('coreutils' 'linux-firmware' 'module-init-tools>=3.16' 'mkinitcpio>=0.7')
@@ -138,7 +139,7 @@ package_linux() {
   find "${pkgdir}" -name '*.ko' -exec gzip -9 {} \;
 }
 
-package_linux-headers() {
+package_linux-arch4ec2-headers() {
   pkgdesc="Header files and scripts for building modules for linux kernel"
   provides=('kernel26-headers')
   conflicts=('kernel26-headers')
@@ -269,7 +270,7 @@ package_linux-headers() {
   rm -rf "${pkgdir}"/usr/src/linux-${_kernver}/arch/{alpha,arm,arm26,avr32,blackfin,cris,frv,h8300,ia64,m32r,m68k,m68knommu,mips,microblaze,mn10300,parisc,powerpc,ppc,s390,sh,sh64,sparc,sparc64,um,v850,xtensa}
 }
 
-package_linux-docs() {
+package_linux-arch4ec2-docs() {
   pkgdesc="Kernel hackers manual - HTML documentation that comes with the Linux kernel."
   provides=('kernel26-docs')
   conflicts=('kernel26-docs')
