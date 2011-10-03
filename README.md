@@ -10,7 +10,7 @@ modified. Unteste.d
 
 NOTE: Documentation is currently very minimal. Should be improved.
 
-## How to create an AMI ==
+## How to create an AMI
 
 Firest, install dependencies, including zsh, xmlto, docbook-xsl and
 probably others (I have yet to test on a truly minimalistic system).
