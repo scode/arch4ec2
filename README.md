@@ -18,9 +18,9 @@ probably others (I have yet to test on a truly minimalistic system).
 Secondly, build the ec2-metadata and kernel packages and create the
 arch repository (for use by pacman) by:
 
-  ./makerepo.sh
+    ./makerepo.sh
 
 After that, bootstrap the AMI on one of your devices (assuming
 /dev/xvdb is the one):
 
-  ./mkami-arch.py --target-ebs-volume=/dev/xvdb --mount-point=/mnt/ami
+    ./mkami-arch.py --target-ebs-volume=/dev/xvdb --mount-point=/mnt/ami
