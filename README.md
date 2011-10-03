@@ -2,7 +2,7 @@ Automated bootstrapping of Arch Linux AMI:s for EC2. Inspired by
 https://github.com/yejun/ec2build but updated and aiming to be a bit
 more complete.
 
-== Current status ==
+## Current status
 
 Only 32 bit supported. 64 bit would probably work with minor
 modifications; the known issue is that the kernel config must be
@@ -10,7 +10,7 @@ modified. Unteste.d
 
 NOTE: Documentation is currently very minimal. Should be improved.
 
-== How to create an AMI ==
+## How to create an AMI ==
 
 Firest, install dependencies, including zsh, xmlto, docbook-xsl and
 probably others (I have yet to test on a truly minimalistic system).
