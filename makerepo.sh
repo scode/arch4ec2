@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+set -e
 set -x
 
 (cd packages/ec2-metadata && makepkg --asroot)
