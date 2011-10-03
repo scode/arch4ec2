@@ -49,8 +49,8 @@ PACKAGES = [
         'iputils',
         'less',
         'lesspipe',
-        'linux',
-        'linux-headers',
+        'linux-arch4ec2',
+        'linux--arch4ec2-headers',
         'logrotate',
         'mailx',
         'nano',
@@ -218,9 +218,8 @@ def main():
             f.write("HoldPkg     = pacman glibc\n")
             f.write("SyncFirst   = pacman\n")
             f.write("Architecture = {0}\n".format(ARCH_ARCHS[machine_arch()]))
-            f.write("[ec2]\n")
-            # TODO: remove dependency on my built repo
-            f.write("Server = file:///root/repo\n")
+            f.write("[arch4ec2]\n")
+            f.write("Server = file://{repo_path}\n".format(repo_path=os.path.join(os.getcwd(), 'repo')))
             f.write("[core]\n")
             f.write("Include = /etc/pacman.d/mirrorlist\n")
             f.write("[extra]\n")
