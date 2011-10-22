@@ -16,10 +16,10 @@ license=('GPL2')
 makedepends=('xmlto' 'docbook-xsl')
 options=('!strip')
 # kernel.org down since compromise
-#source=("ftp://ftp.kernel.org/pub/linux/kernel/v3.0/linux-${_basekernel}.tar.bz2"
-#        "ftp://ftp.kernel.org/pub/linux/kernel/v3.0/patch-${pkgver}.gz"
-source=("http://ftp.informatik.rwth-aachen.de/ftp/pub/Linux/kernel/v3.0/linux-${_basekernel}.tar.bz2"
-        "http://ftp.informatik.rwth-aachen.de/ftp/pub/Linux/kernel/v3.0/patch-${pkgver}.gz"
+source=("ftp://ftp.kernel.org/pub/linux/kernel/v3.0/linux-${_basekernel}.tar.bz2"
+        "ftp://ftp.kernel.org/pub/linux/kernel/v3.0/patch-${pkgver}.gz"
+#source=("http://ftp.informatik.rwth-aachen.de/ftp/pub/Linux/kernel/v3.0/linux-${_basekernel}.tar.bz2"
+#        "http://ftp.informatik.rwth-aachen.de/ftp/pub/Linux/kernel/v3.0/patch-${pkgver}.gz"
         # the main kernel config files
         'config' 'config.x86_64'
         # standard config files for mkinitcpio ramdisk
