@@ -45,5 +45,5 @@ Then register your AMI using the snapshot just created:
 
 Note that the use of /dev/sda (rather than /dev/xvda) is intentional,
 as that is how it appears to the early pv-grub boot environment at
-EC2. The aki in the example is the 32 bit pv-grub aki supplised by
+EC2. The aki in the example is the 32 bit pv-grub aki supplied by
 amazon for use on volumes with root fs on the first partition.
