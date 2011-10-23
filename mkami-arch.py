@@ -334,8 +334,6 @@ def main():
         log.exception('failure')
         raise
     finally:
-        print('press enter to cleanup')
-        sys.stdin.readline()
         for subvol in reversed(btrfs_subvolumes):
             try:
                 zsh("btrfs subvolume delete '{0}'")(subvol)
