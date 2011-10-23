@@ -51,7 +51,14 @@ Then snapshot your device (like this, or in the management console):
 
 Then register your AMI using the snapshot just created:
 
-    ec2-register --debug -s snap-XXXXXXXX --root-device-name /dev/sda -n my-arch-ami --kernel aki-47eec433
+    ec2-register --debug -s snap-XXXXXXXX --root-device-name /dev/sda -n my-arch-ami --kernel AKI
+
+Where AKI is (see http://ec2-downloads.s3.amazonaws.com/user_specified_kernels.pdf):
+
+* For eu-west-1: aki-47eec433
+* For us-west-1: aki-9da0f1d8
+* For us-east-1: aki-4c7d9525
+* For ap-southeast-1: aki-6fd5aa3d
 
 Note that the use of /dev/sda (rather than /dev/xvda) is intentional,
 as that is how it appears to the early pv-grub boot environment at
