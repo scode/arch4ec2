@@ -300,12 +300,17 @@ set -x
 
 mkdir -p /root/.ssh
 /usr/bin/ec2-metadata -u | egrep '^ssh-rsa' >> /root/.ssh/authorized_keys.dynamic
-cat /root/.ssh/authorized_keys /root/.ssh/authorized_keys.dynamic | sort -u >> /root/.ssh/authorized_keys.tmp
+if [ -e /root/.ssh/authorized_keys ]; then
+    cat /root/.ssh/authorized_keys > /root/.ssh/authorized_keys.tmp.in
+else
+    touch /root/.ssh/authorized_keys.tmp.in
+fi
+cat /root/.ssh/authorized_keys.tmp.in /root/.ssh/authorized_keys.dynamic | sort -u > /root/.ssh/authorized_keys.tmp
 sync
 mv /root/.ssh/authorized_keys.tmp /root/.ssh/authorized_keys
 
 # Set hostname unless a human has set it in rc.conf.
-if (source /etc/rc.conf && [ -z "$HOSTNAME" ]); then
+if ( source /etc/rc.conf && [ -z "$HOSTNAME" ] ); then
     hostname $(ec2-metadata --all | egrep '^local-hostname' | awk '{print $2;})'
 fi
 """)
