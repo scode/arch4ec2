@@ -44,6 +44,7 @@ PACKAGES = [
         'ec2-metadata',
         'filesystem',
         'groff',
+        'inetutils',
         'initscripts',
         'iproute2',
         'iputils',
