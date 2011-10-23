@@ -28,6 +28,10 @@ stuff, and if you specify the wrong EBS device you'll nuke something
 you did not intend to nuke). Use of a virtualized environment of some
 kind is highly recommended.
 
+One way to get started is to use the pre-build AMI:s listed
+above. Another way is to make a clean installation of Arch in
+e.g. VirtualBox.
+
 Firest, install dependencies, including zsh, xmlto, docbook-xsl and
 probably others (I have yet to test on a truly minimalistic system).
 
