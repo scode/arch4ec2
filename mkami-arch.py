@@ -248,8 +248,8 @@ def main():
 
         zsub("mv {ROOT}/etc/pacman.d/mirrorlist {ROOT}/etc/pacman.d/mirrorlist.pacorig")
         with io.open('{ROOT}/etc/pacman.d/mirrorlist'.format(**subs), 'w') as f:
-            f.write("Server = http://mirrors.kernel.org/archlinux/$repo/os/{ARCH_ARCH}\n")
-            f.write("Server = ftp://ftp.archlinux.org/$repo/os/{ARCH_ARCH}\n")
+            f.write("Server = http://mirrors.kernel.org/archlinux/$repo/os/{ARCH_ARCH}\n".format(**subs))
+            f.write("Server = ftp://ftp.archlinux.org/$repo/os/{ARCH_ARCH}\n".format(**subs))
 
         zsub("chmod 666 {ROOT}/dev/null")
         zsub("mknod -m 666 {ROOT}/dev/ranom c 1 8")
