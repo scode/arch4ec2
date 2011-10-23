@@ -1,14 +1,17 @@
-Automated bootstrapping of Arch Linux AMI:s for EC2. Inspired by
-https://github.com/yejun/ec2build but updated and aiming to be a bit
-more complete.
+## Description
+
+Mostly automated creation/bootstrapping of an Arch Linux AMI for EC2,
+without relying on any external "magic" other than that provided by
+EC2, Arch Linux, and the contents of this repository.
+
+Inspired by https://github.com/yejun/ec2build but updated and aiming
+to be a bit more complete.
 
 ## Current status
 
 Only 32 bit supported. 64 bit would probably work with minor
 modifications; the known issue is that the kernel config must be
-modified. Unteste.d
-
-NOTE: Documentation is currently very minimal. Should be improved.
+modified. Untested.
 
 ## How to create an AMI
 
