@@ -12,6 +12,13 @@ NOTE: Documentation is currently very minimal. Should be improved.
 
 ## How to create an AMI
 
+I recommend *against* running this on a system that you use for
+anything other than bootstrapping. The script is not treating 'root'
+as a dangerous user (e.g., uses makepkg --asroot and rm -rf:es some
+stuff, and if you specify the wrong EBS device you'll nuke something
+you did not intend to nuke). Use of a virtualized environment of some
+kind is highly recommended.
+
 Firest, install dependencies, including zsh, xmlto, docbook-xsl and
 probably others (I have yet to test on a truly minimalistic system).
 
