@@ -47,3 +47,14 @@ Note that the use of /dev/sda (rather than /dev/xvda) is intentional,
 as that is how it appears to the early pv-grub boot environment at
 EC2. The aki in the example is the 32 bit pv-grub aki supplied by
 amazon for use on volumes with root fs on the first partition.
+
+## The kernel
+
+Since a customly configured kernel is necessary, and to avoid future
+upgrades switching to a stock compiled kernel, the kernel package used
+is specifically named after arch4ec2. This means that it should be
+safe to upgrade all packages on the bootstrapped instances at any time
+without risking switching to a kernel that won't boot.
+
+Ideally, I should set up a repository for people to use. If you are
+interested and would use it, let me know.
