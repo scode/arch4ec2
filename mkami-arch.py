@@ -50,7 +50,7 @@ PACKAGES = [
         'less',
         'lesspipe',
         'linux-arch4ec2',
-        'linux--arch4ec2-headers',
+        'linux-arch4ec2-headers',
         'logrotate',
         'mailx',
         'nano',
