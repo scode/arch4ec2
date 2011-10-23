@@ -283,6 +283,27 @@ def main():
             f.write("# This will enable the system log.\n")
             f.write("c0:12345:respawn:/sbin/agetty 38400 hvc0 linux\n")
 
+        with io.open('{ROOT}/etc/rc.local'.format(**subs), 'w') as f:
+            # TODO: i'm gonna switch to templates so did not have stamina to use a bunch of f.write() statements
+            f.write("""#!/bin/bash
+#
+# /etc/rc.local: Local multi-user startup script.
+#
+
+# Useful for operators looking at the system log
+echo "BEGIN ec2 metadata"
+/usr/bin/ec2-metadata --all
+echo "END ec2 metadata"
+
+set -x
+
+mkdir -p /root/.ssh
+/usr/bin/ec2-metadata -u | egrep '^ssh-rsa' >> /root/.ssh/authorized_keys.dynamic
+cat /root/.ssh/authorized_keys /root/.ssh/authorized_keys.dynamic | sort -u >> /root/.ssh/authorized_keys.tmp
+sync
+mv /root/.ssh/authorized_keys.tmp /root/.ssh/authorized_keys
+""")
+
         with io.open('{ROOT}/etc/hosts.deny'.format(**subs), 'w') as f:
             f.write("#\n")
             f.write("# /etc/hosts.deny\n")
