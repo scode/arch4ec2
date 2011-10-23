@@ -9,10 +9,11 @@ rm -rf packages.build
 (cd packages.build/ec2-metadata && makepkg --asroot)
 (cd packages.build/linux-arch4ec2 && makepkg --asroot)
 
+rm -rf repo
 mkdir -p repo
 cp packages.build/ec2-metadata/*.pkg.tar.xz repo
 cp packages.build/linux-arch4ec2/*.pkg.tar.xz repo
 
-(cd repo && repo-add arch4ec2.tar.gz *.pkg.tar.xz)
+(cd repo && repo-add arch4ec2.tar.gz *.pkg.tar.xz && ln -sf arch4ec2.tar.gz arch4ec2.db)
 
 
