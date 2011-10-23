@@ -23,4 +23,4 @@ arch repository (for use by pacman) by:
 After that, bootstrap the AMI on one of your devices (assuming
 /dev/xvdb is the one):
 
-    ./mkami-arch.py --target-ebs-volume=/dev/xvdb --mount-point=/mnt/ami
+    ./mkami-arch.py --target-ebs-device=/dev/xvdb --mount-point=/mnt/ami
