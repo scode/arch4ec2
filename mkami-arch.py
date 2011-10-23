@@ -311,7 +311,7 @@ mv /root/.ssh/authorized_keys.tmp /root/.ssh/authorized_keys
 
 # Set hostname unless a human has set it in rc.conf.
 if ( source /etc/rc.conf && [ -z "$HOSTNAME" ] ); then
-    hostname $(ec2-metadata --all | egrep '^local-hostname' | awk '{print $2;})'
+    hostname $(ec2-metadata --all | egrep '^local-hostname' | awk '{print $2;}')
 fi
 """)
 
