@@ -144,7 +144,7 @@ def parse_args():
                         help='The path to the directory on which to mount the root file system during bootstrap.')
     parser.add_argument('--temp-dir', type=str, default='/var/tmp',
                         help='The directory in which to allocate the temporary directory used for bootstrapping.')
-    parser.add_argument('--no-clean', type='store_true', default=False,
+    parser.add_argument('--no-clean', action='store_true', default=False,
                         help='Do not clean up temporary directory at end, but log path to it (useful for debugging)')
 
     return parser.parse_args()
