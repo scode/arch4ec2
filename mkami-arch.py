@@ -293,9 +293,8 @@ def main():
             f.write("\n")
             f.write("title  Arch Linux\n")
             f.write("	root   (hd0,0)\n")
-            # TODO: fix path to kernel when kern build fixed
-            f.write("	kernel /vmlinuz-linux root=/dev/xvda2 console=hvc0 ip=dhcp spinlock=tickless ro\n")
-            f.write("	initrd /initramfs-linux.img\n")
+            f.write("	kernel /vmlinuz-linux-arch4ec2 root=/dev/xvda2 console=hvc0 ip=dhcp spinlock=tickless ro\n")
+            f.write("	initrd /initramfs-linux-arch4ec2.img\n")
 
         zsub("cd {ROOT}/boot && ln -s boot/grub .")
         zsub("sed -i.pacorig -e 's/#PasswordAuthentication yes/PasswordAuthentication no/' "
