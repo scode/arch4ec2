@@ -303,7 +303,11 @@ mkdir -p /root/.ssh
 cat /root/.ssh/authorized_keys /root/.ssh/authorized_keys.dynamic | sort -u >> /root/.ssh/authorized_keys.tmp
 sync
 mv /root/.ssh/authorized_keys.tmp /root/.ssh/authorized_keys
-hostname $(ec2-metadata --all | egrep '^local-hostname' | awk '{print $2;})'
+
+# Set hostname unless a human has set it in rc.conf.
+if (source /etc/rc.conf && [ -z "$HOSTNAME" ]); then
+    hostname $(ec2-metadata --all | egrep '^local-hostname' | awk '{print $2;})'
+fi
 """)
 
         with io.open('{ROOT}/etc/hosts.deny'.format(**subs), 'w') as f:
