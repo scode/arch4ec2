@@ -24,3 +24,15 @@ After that, bootstrap the AMI on one of your devices (assuming
 /dev/xvdb is the one):
 
     ./mkami-arch.py --target-ebs-device=/dev/xvdb --mount-point=/mnt/ami
+
+Then snapshot your device (like this, or in the management console):
+
+  ec2-create-snapshot -d 'my-ami-snapshot' vol-XXXXXXX
+
+Then register your AMI using the snapshot just created:
+
+  ec2-register --debug -s snap-XXXXXXXX --root-device-name /dev/sda -n my-arch-ami --kernel aki-47eec433
+
+Note that the use of /dev/sda (rather than /dev/xvda) is intentional,
+as that is how it appears to the early pv-grub boot environment at
+EC2.
