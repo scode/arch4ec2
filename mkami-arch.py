@@ -325,7 +325,7 @@ def main():
             f.write("nameserver 172.16.0.23\n")
         zsub("touch {ROOT}/root/firstboot")
 
-        #TODO: copy repo
+        zsub("mkdir {ROOT}/root/repo && cd repo && find . -depth -print | cpio -dpmv --sparse {ROOT}/root/repo")
 
         zsub("cd {ROOT} && find . -depth -print | cpio -pdmv --sparse {NEWROOT}")
     except Exception as e:
