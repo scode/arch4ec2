@@ -258,7 +258,7 @@ def main():
         zsub("mkdir -m 1777 {ROOT}/dev/shm")
         zsub("mv {ROOT}/etc/rc.conf {ROOT}/etc/rc.conf.pacorig")
         # TODO: configurable timezone, locale
-        with io.open('{ROOT}/etc/inittab'.format(**subs), 'w') as f:
+        with io.open('{ROOT}/etc/rc.conf'.format(**subs), 'w') as f:
             f.write('LOCALE="en_US.UTF-8"\n')
             f.write('TIMEZONE="UTC"\n')
             f.write('MOD_AUTOLOAD="no"\n')
