@@ -13,6 +13,12 @@ Only 32 bit supported. 64 bit would probably work with minor
 modifications; the known issue is that the kernel config must be
 modified. Untested.
 
+## Pre-created AMI:s
+
+* eu-west-1: ami-51625f25 / arch4ec2-32bit-20111023-3
+
+(Want other regions/64 bit? Let me know. Else I'll do it when I get around to it.)
+
 ## How to create an AMI
 
 I recommend *against* running this on a system that you use for
