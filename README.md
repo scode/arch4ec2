@@ -16,6 +16,7 @@ modified. Untested.
 ## Pre-created AMI:s
 
 * eu-west-1: ami-51625f25 / arch4ec2-32bit-20111023-3
+* us-west-1: ami-f9b3efbc / arch4ec2-uswest-32bit-20111023-1
 
 (Want other regions/64 bit? Let me know. Else I'll do it when I get around to it.)
 
