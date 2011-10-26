@@ -15,8 +15,12 @@ modified. Untested.
 
 ## Pre-created AMI:s
 
-* eu-west-1: ami-51625f25 / arch4ec2-32bit-20111023-3
-* us-west-1: ami-f9b3efbc / arch4ec2-uswest-32bit-20111023-1
+* 2011-10-23: eu-west-1: ami-51625f25 / arch4ec2-32bit-20111023-3
+* 2011-10-23: us-west-1: ami-f9b3efbc / arch4ec2-uswest-32bit-20111023-1
+
+The dates indicate when they were created, and thus should reflect
+arch as it appeared on that day (with appropriate fuzz depending on
+mirror latencies).
 
 (Want other regions/64 bit? Let me know. Else I'll do it when I get around to it.)
 
