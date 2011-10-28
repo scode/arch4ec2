@@ -15,6 +15,9 @@ modified. Untested.
 
 ## Pre-created AMI:s
 
+(NOTE: These lack /boot mounted when they start up, due to issue #3. I
+will fix that and create new images at some point.)
+
 * 2011-10-23: eu-west-1: ami-51625f25 / arch4ec2-32bit-20111023-3
 * 2011-10-23: us-west-1: ami-f9b3efbc / arch4ec2-uswest-32bit-20111023-1
 
