@@ -14,6 +14,4 @@ mkdir -p repo
 cp packages.build/ec2-metadata/*.pkg.tar.xz repo
 cp packages.build/linux-arch4ec2/*.pkg.tar.xz repo
 
-(cd repo && repo-add arch4ec2.tar.gz *.pkg.tar.xz && ln -sf arch4ec2.tar.gz arch4ec2.db)
-
-
+(cd repo && repo-add arch4ec2.db.tar.gz *.pkg.tar.xz)
