@@ -1,3 +1,10 @@
+## UNMAINTAINED :(
+
+As much as I hate that it came to this, I just don't have the time to
+maintain this. I hope it might be useful to someone, but unfortunately
+you shouldn't expect it to work on current arch (this is written
+2012-05-05).
+
 ## Description
 
 Mostly automated creation/bootstrapping of an Arch Linux AMI for EC2,
